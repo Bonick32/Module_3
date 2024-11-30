@@ -11,10 +11,13 @@ def string_info(string):
 def is_contains(string, list_to_search):
     count_calls()
     list_to_search = [s.lower() for s in list_to_search]
-    if string.lower() in list_to_search:
-        print(True)
-    else:
-        print(False)
+
+    print(string.lower() in list_to_search)
+
+    # if string.lower() in list_to_search:
+    #     print(True)
+    # else:
+    #     print(False)
 
 string_info('Флегматик')
 string_info('СаНгвинИк')
