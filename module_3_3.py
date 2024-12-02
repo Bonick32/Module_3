@@ -2,7 +2,7 @@ def print_params(a = 1, b = 'string', c = True):
     print(a, b, c)
 
 print_params()               # получил > 1 string True
-print_params(78, '54') # получил > 78 54 True
+print_params(78, '54')          # получил > 78 54 True
 print_params(a = 4)          # получил > 4 string True
 print_params(b = 25)         # получил > 1 25 True
 print_params(c = [1, 2, 3])  # получил > 1 string [1, 2, 3]
