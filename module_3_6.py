@@ -19,10 +19,11 @@ def calculate_structure_sum(lists):
             flat_list_.append(i)
         if isinstance(i, str):
             flat_list_.append(len(i))
-        if isinstance(i, dict):
-            values_ = list(i.values())
-            for jv in values_:
-                flat_list_.append(jv)
+
+        if isinstance(i, dict):             # так как у нас в примере пара "Ключ: значение" это "строка: число"
+            values_ = list(i.values())      # то я не стал усложнять распаковку словаря проверкой на тип
+            for jv in values_:              # ключа и значения, иначе добавил бы в виде, приведенном выше,
+                flat_list_.append(jv)       # увеличивая код. Вывести в отдельную функцию - пока не разобрался, как
             keys_ = list(i.keys())
             for jk in keys_:
                 flat_list_.append(len(jk))
