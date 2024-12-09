@@ -12,7 +12,6 @@ flat_list_ = [] # К сожалению, не смог найти решение
                 # Чувствую, что я где-то рядом с более лучшим решением, но не нашел,
                 # как сделать запись типа i + calculate_structure_sum(i)
 
-
 def calculate_structure_sum(lists):
 
     for i in lists:
@@ -32,4 +31,5 @@ def calculate_structure_sum(lists):
             calculate_structure_sum(i)
     return sum(flat_list_)
 
-print(calculate_structure_sum(data_structure))
+result = calculate_structure_sum(data_structure)
+print(result)
