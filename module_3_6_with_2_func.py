@@ -10,7 +10,7 @@ data_structure = [
 flat_list_ = []
 
 def check_and_past(value_, list_flat):
-   if isinstance(value_, int):
+   if isinstance(value_, (int, float)):
        list_flat.append(value_)
    if isinstance(value_, str):
        list_flat.append(len(value_))
@@ -42,7 +42,7 @@ print(result)
 # def calculate_structure_sum(lists):
 #     summa = 0
 #     for i in lists:
-#         if isinstance(i, int):
+#         if isinstance(i, (int, float)):
 #             summa += i
 #         elif isinstance(i, str):
 #             summa += len(i)
