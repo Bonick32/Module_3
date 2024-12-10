@@ -4,7 +4,8 @@ data_structure = [
     {'a': 4, 'b': 5},
     (6, {'cube': 7, 'drum': 8}),
     "Hello",
-    ((), [{(2, 'Urban', ('Urban2', 35))}])
+    ((), [{(2, 'Urban', ('Urban2', 35))}]),
+    {'s':(1, 1), 'a':{'sz': 1}}  # не знаю почему, но здесь не считает значение 1 в словаре, находящимся в словаре 
 ]
 
 flat_list_ = [] # К сожалению, не смог найти решение без создания плоского списка,
@@ -23,12 +24,16 @@ def calculate_structure_sum(lists):
     for i in lists:
         check_and_past(i, flat_list_)
             
-        
-
         if isinstance(i, dict):             
             values_ = list(i.values())      
-            for jv in values_:              
-                check_and_past(jv, flat_list_)   
+            for jv in values_: 
+                if isinstance(jv, int) or isinstance(jv, str):
+                    check_and_past(jv, flat_list_) 
+                if isinstance(jv, list) or isinstance(jv, tuple) or isinstance(jv, set):
+                    calculate_structure_sum(jv)
+                if isinstance(jv, dict):
+                    calculate_structure_sum(jv)
+    
             keys_ = list(i.keys())
             for jk in keys_:
                 check_and_past(jk, flat_list_)
