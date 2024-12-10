@@ -11,7 +11,7 @@ flat_list_ = [] # К сожалению, не смог найти решение
                 # состоящего из всех чисел и длин строк, в том числе ключей словаря.
                 # Чувствую, что я где-то рядом с более лучшим решением, но не нашел,
                 # как сделать запись типа i + calculate_structure_sum(i)
-def check_and_past(value_, list_data, list_flat):
+def check_and_past(value_, list_flat):
     
     if isinstance(value_, int):
         list_flat.append(value_)
@@ -21,17 +21,17 @@ def check_and_past(value_, list_data, list_flat):
 def calculate_structure_sum(lists):
 
     for i in lists:
-        check_and_past(i, lists, flat_list_)
+        check_and_past(i, flat_list_)
             
         
 
         if isinstance(i, dict):             
             values_ = list(i.values())      
             for jv in values_:              
-                check_and_past(jv, values_, flat_list_)      
+                check_and_past(jv, flat_list_)   
             keys_ = list(i.keys())
             for jk in keys_:
-                check_and_past(jk, keys_, flat_list_)
+                check_and_past(jk, flat_list_)
 
         if isinstance(i, list) or isinstance(i, tuple) or isinstance(i, set):
             calculate_structure_sum(i)
